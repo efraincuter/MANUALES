@@ -1,0 +1,22 @@
+# SUDO 
+## En debian 13.3 (trixie)
+### Buscar el paquete
+```
+apt-cache search sudo
+```
+### Instalar SUDO 
+```
+apt-get install sudo
+```
+### Agrega un usuario al grupo sudo 
+```
+usermod -aG sudo USUARIO
+```
+### Verificar que pertenece al grupo de SUDO
+```
+id usuario
+```
+### Verificar directamente en el grupo 
+```
+getent group sudo
+```

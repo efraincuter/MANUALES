@@ -1,2 +1,2 @@
-# SSH configuraciones y log
+# SSH configuraciones
 ```
