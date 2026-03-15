@@ -16,7 +16,7 @@ usermod -aG sudo USUARIO
 ```
 id usuario
 ```
-### Verificar directamente en el grupo 
+### Verificar directamente en el grupo, y salir el usuario de su sesion 
 ```
 getent group sudo
 ```
