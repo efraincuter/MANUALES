@@ -20,3 +20,9 @@ id usuario
 ```
 getent group sudo
 ```
+
+## En Ubuntu 24 
+```
+Adcionar un usuario adduser desarrollo
+Colocar en el grupo SUDO usermod -aG sudo desarrollo
+```
