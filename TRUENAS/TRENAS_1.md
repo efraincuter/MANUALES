@@ -17,3 +17,6 @@ Crear grupos y adicioanr los usuarios a los grupos
     - NAME : UTI  > DATASET PRESENT : SMB > UTI > 
         Permissions > Edit ---> Elminar Group-builtin_usres 
         Adicionar Add Item : Who - Group > seleccionar el grupp GUTI > En la parte de Permissions : Full Control
+
+### AUDITAR
+```
