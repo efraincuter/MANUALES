@@ -17,7 +17,7 @@ git add .
 git commit -m "Se creo la carpeta GIT"
 git push origin main
 Username for 'https://github.com': efraincuter
-Password for 'https://efraincuter@github.com': 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
+Password for 'https://efraincuter@github.com': colocar el token
 git config --global credential.helper store
 ```
 
