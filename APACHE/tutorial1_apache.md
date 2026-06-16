@@ -73,3 +73,66 @@ pub:
 
 openssl pkey -in /etc/letsencrypt/live/srv-t.senado.gob.bo/privkey.pem -text -noout | grep -E "Private-Key|ASN1 OID|NIST CURVE"
 ```
+## Desinstalar apache2 de debian 13
+
+### Revisar los cetificados que estan instaldos
+```
+certbot certificates
+apache2ctl -S | grep -A5 ":443"
+```
+
+### Elinar el certificado SSL
+```
+root@SRV-TEST:~# certbot delete --cert-name srv-t.senado.gob.bo
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+The following certificate(s) are selected for deletion:
+
+  * srv-t.senado.gob.bo
+
+WARNING: Before continuing, ensure that the listed certificates are not being
+used by any installed server software (e.g. Apache, nginx, mail servers).
+Deleting a certificate that is still being used will cause the server software
+to stop working. See https://certbot.org/deleting-certs for information on
+deleting certificates safely.
+
+Are you sure you want to delete the above certificate(s)?
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+(Y)es/(N)o: y
+Deleted all files relating to certificate srv-t.senado.gob.bo.
+
+root@SRV-TEST:~# certbot certificates
+
+Limpiar las configuraciones de apache
+
+root@SRV-TEST:~# rm /etc/apache2/sites-available/000-default-le-ssl.conf 
+root@SRV-TEST:~# rm -rf /etc/letsencrypt
+root@SRV-TEST:~# rm -rf /var/log/letsencrypt
+systemctl restart apache2
+a2dissite 000-default-le-ssl.conf
+a2dismod ssl
+systemctl restart apache2
+netstat -tulpn | grep :443
+
+En el atchivo 000-default.conf comentar o elminar las lineas y reinicar apache
+
+root@SRV-TEST:~# vim /etc/apache2/sites-available/000-default.conf
+RewriteEngine on
+RewriteCond %{SERVER_NAME} =srv-t.senado.gob.bo
+RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+
+systemctl restart apache2
+
+root@SRV-TEST:~# curl -I http://srv-t.senado.gob.bo
+HTTP/1.1 200 OK
+Date: Tue, 16 Jun 2026 13:47:55 GMT
+Server: Apache/2.4.67 (Debian)
+Last-Modified: Tue, 02 Jun 2026 21:33:37 GMT
+ETag: "29cf-6534c10611532"
+Accept-Ranges: bytes
+Content-Length: 10703
+Vary: Accept-Encoding
+Content-Type: text/html
+
+```
