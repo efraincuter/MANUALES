@@ -7,6 +7,12 @@ __senado_gob_bo.ca-bundle  __senado_gob_bo.crt	__senado_gob_bo.key  __senado_gob
 
 Cambiar el propietario de uti a root
 
+__senado_gob_bo.crt	                                Certificado del servidor Tu certificado principal (dominio)
+__senado_gob_bo.key	                                Clave privada La clave secreta de tu servidor
+__senado_gob_bo.ca-bundle	                        Cadena de certificados intermedios	Conecta tu certificado con una raíz confiable
+__senado_gob_bo.p7b	                                Certificado en formato PKCS#7	Alternativo, no lo necesitas para Apache
+
+
 root@SRV-TEST:/home/uti# chown root:root __senado_gob_bo.*
 root@SRV-TEST:/home/uti# ls -lh
 total 13M
