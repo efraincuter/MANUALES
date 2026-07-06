@@ -20,3 +20,9 @@ Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 ```
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ```
+
+### Actualizar un paquete,descargar el paquete e instalarlo
+```
+sudo dpkg -i sshpilot_5.4.5-1_all.deb
+sudo apt install -f (en caso de resolver dependencias)
+```
