@@ -109,7 +109,7 @@ Content-Type: text/html
 
 ### Corregir erros simples
 ```
-Editar el archivo de configuracion de apache
+Editar el archivo de configuracion de apache para el certificado 
 vim /etc/apache2/apache2.conf
 Agregar al final del archivo 
   ServerName srv-t.senado.gob.bo
