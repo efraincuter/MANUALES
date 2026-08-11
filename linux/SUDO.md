@@ -16,13 +16,15 @@ usermod -aG sudo USUARIO
 ```
 id usuario
 ```
-### Verificar directamente en el grupo, y salir el usuario de su sesion 
+### Verificar directamente en el grupo, y va salir el usuario de SU sesion 
 ```
 getent group sudo
 ```
 
 ## En Ubuntu 24 
 ```
-Adcionar un usuario adduser desarrollo
-Colocar en el grupo SUDO usermod -aG sudo desarrollo
+Adcionar un usuario 
+  adduser desarrollo
+Colocar en el grupo SUDO 
+  usermod -aG sudo desarrollo
 ```
