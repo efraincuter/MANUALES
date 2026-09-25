@@ -9,7 +9,7 @@ Crear el SubDomion en Domain > DNS, seleccionar el nombre, en este ejemplo senad
         - Hostname : test
         - IP Addresses : 10.0.0.199
 
-    #Ingresar a la IP en la misma opcion anterior > ADD > DNS : Point Record
+    #Ingresar a ALL DNS ZONES ->10.0.0 > ADD > DNS : Point Record
         -IP Address : 10.0.0.199
         -Pointer record : test.senado.gob.bo
 
