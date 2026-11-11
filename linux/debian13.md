@@ -1,4 +1,4 @@
-# Distribucion > Debian 13
+# Distribución > Debian 13
 
 ### Crear el repositorio en la ruta /etc/apt/sources.list.d/ el archivo debian.sources 
 
@@ -16,7 +16,7 @@ Components: main non-free-firmware
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 ```
 
-### Agregar al PATH en root vim /root/.bashrc, adicionarlo al final
+### Agregar al PATH en root vim /root/.bashrc, adicionar al final
 ```
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ```
@@ -25,4 +25,6 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ```
 sudo dpkg -i sshpilot_5.4.5-1_all.deb
 sudo apt install -f (en caso de resolver dependencias)
+```
+### Instalar dependendencias y SUDO para otros usuarios 
 ```

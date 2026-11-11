@@ -57,3 +57,10 @@ Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 4096 bytes
 I/O size (minimum/optimal): 4096 bytes / 4096 bytes
 ```
+
+### Adicionar un nuevo disco por GUI
+```
+Limpiar el disco ir a pve > Disks colocarse en el disco /dev/sda y luego Wipe Disk, indicara un mensaje donde se elmininara todos los datos
+En Disks > Direcory crear un nuevo directorio Disk : /dev/sda,Filesystem : ext4,
+Name : DISCOS16TB
+```
